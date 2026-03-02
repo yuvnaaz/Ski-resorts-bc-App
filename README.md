@@ -1,2 +1,9 @@
-# Ski-resorts-bc-App
-Ski-Resorts-BC-App is a web application that helps users explore and compare ski resorts across British Columbia. It presents organized resort data, including location and key features, through a clean and user-friendly interface. This project demonstrates front-end development, data structuring, and UI design principles.
+# README
+
+This is the [Flask](http://flask.pocoo.org/) [quick start](http://flask.pocoo.org/docs/1.0/quickstart/#a-minimal-application) example for [Render](https://render.com).
+
+The app in this repo is deployed at [https://flask.onrender.com](https://flask.onrender.com).
+
+## Deployment
+
+Follow the guide at https://render.com/docs/deploy-flask.

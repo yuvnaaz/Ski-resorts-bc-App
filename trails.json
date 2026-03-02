@@ -1,0 +1,902 @@
+[
+    {
+        "": "",
+        "title": "1st Ave Bikeway (WB)",
+        "riding area": "Vancouver",
+        "rating": "",
+        "distance": "297 m",
+        "descent": "",
+        "climb": ""
+    },
+    {
+        "": "",
+        "title": "1st Ave Connector",
+        "riding area": "Vancouver",
+        "rating": "",
+        "distance": "291 m",
+        "descent": "",
+        "climb": "3 m"
+    },
+    {
+        "": "",
+        "title": "1st AVE SE - 20st SE",
+        "riding area": "Salmon Arm Greenways",
+        "rating": "",
+        "distance": "59 m",
+        "descent": "",
+        "climb": ""
+    },
+    {
+        "": "",
+        "title": "1st Step",
+        "riding area": "B&K",
+        "rating": "",
+        "distance": "1 km",
+        "descent": "-191 m",
+        "climb": ""
+    },
+    {
+        "": "",
+        "title": "2 Bridges",
+        "riding area": "South Star Trails",
+        "rating": "",
+        "distance": "183 m",
+        "descent": "-3 m",
+        "climb": "1 m"
+    },
+    {
+        "": "",
+        "title": "2 Deadends MG #18",
+        "riding area": "Bowen Island",
+        "rating": "",
+        "distance": "1 km",
+        "descent": "-74 m",
+        "climb": "88 m"
+    },
+    {
+        "": "",
+        "title": "2 Fingers",
+        "riding area": "Gillard",
+        "rating": "",
+        "distance": "508 m",
+        "descent": "-44 m",
+        "climb": ""
+    },
+    {
+        "": "",
+        "title": "2 Flats",
+        "riding area": "Cumberland trail network",
+        "rating": "",
+        "distance": "422 m",
+        "descent": "-3 m",
+        "climb": "8 m"
+    },
+    {
+        "": "",
+        "title": "2 Free 1",
+        "riding area": "Fox Mountain",
+        "rating": "",
+        "distance": "400 m",
+        "descent": "-40 m",
+        "climb": ""
+    },
+    {
+        "": "",
+        "title": "2 Fridges",
+        "riding area": "South Side",
+        "rating": "",
+        "distance": "346 m",
+        "descent": "",
+        "climb": "24 m"
+    },
+    {
+        "": "",
+        "title": "2 Pack too Cranked",
+        "riding area": "Cumberland trail network",
+        "rating": "",
+        "distance": "517 m",
+        "descent": "-36 m",
+        "climb": ""
+    },
+    {
+        "": "",
+        "title": "2 Pond Pass",
+        "riding area": "Forbidden Plateau",
+        "rating": "",
+        "distance": "362 m",
+        "descent": "-12 m",
+        "climb": "4 m"
+    },
+    {
+        "": "",
+        "title": "2 Sheiks & A Dog",
+        "riding area": "Forbidden Plateau",
+        "rating": "",
+        "distance": "1 km",
+        "descent": "-83 m",
+        "climb": "11 m"
+    },
+    {
+        "": "",
+        "title": "2%",
+        "riding area": "Moonrakers",
+        "rating": "",
+        "distance": "6 km",
+        "descent": "-13 m",
+        "climb": "181 m"
+    },
+    {
+        "": "",
+        "title": "2Cents",
+        "riding area": "Vedder Mountain",
+        "rating": "",
+        "distance": "706 m",
+        "descent": "-77 m",
+        "climb": ""
+    },
+    {
+        "": "",
+        "title": "2nd entrance to Kangaroo",
+        "riding area": "Merry Creek",
+        "rating": "",
+        "distance": "29 m",
+        "descent": "-1 m",
+        "climb": ""
+    },
+    {
+        "": "",
+        "title": "2nd Helping",
+        "riding area": "Valemount Bike Park",
+        "rating": "",
+        "distance": "100 m",
+        "descent": "",
+        "climb": "7 m"
+    },
+    {
+        "": "",
+        "title": "2nd Helping",
+        "riding area": "Sparwood Ridge",
+        "rating": "",
+        "distance": "1 km",
+        "descent": "-94 m",
+        "climb": "27 m"
+    },
+    {
+        "": "",
+        "title": "3 'Lil Piggies Went Home",
+        "riding area": "Fox Mountain",
+        "rating": "",
+        "distance": "587 m",
+        "descent": "-11 m",
+        "climb": "2 m"
+    },
+    {
+        "": "",
+        "title": "3 'Lil Pigs",
+        "riding area": "Fox Mountain",
+        "rating": "",
+        "distance": "507 m",
+        "descent": "",
+        "climb": "20 m"
+    },
+    {
+        "": "",
+        "title": "3 Bears (Bracken)",
+        "riding area": "Harbourview",
+        "rating": "",
+        "distance": "803 m",
+        "descent": "-89 m",
+        "climb": "5 m"
+    },
+    {
+        "": "",
+        "title": "3 Ditches",
+        "riding area": "Northwest Bay Trails",
+        "rating": "",
+        "distance": "1 km",
+        "descent": "-32 m",
+        "climb": "12 m"
+    },
+    {
+        "": "",
+        "title": "3 Knobbs",
+        "riding area": "Burke Mountain",
+        "rating": "",
+        "distance": "1 km",
+        "descent": "-91 m",
+        "climb": "3 m"
+    },
+    {
+        "": "",
+        "title": "3 Log Ride",
+        "riding area": "The Vortex",
+        "rating": "",
+        "distance": "262 m",
+        "descent": "",
+        "climb": "4 m"
+    },
+    {
+        "": "",
+        "title": "3 Rings",
+        "riding area": "Kalamalka Lake",
+        "rating": "",
+        "distance": "631 m",
+        "descent": "-9 m",
+        "climb": "54 m"
+    },
+    {
+        "": "",
+        "title": "3 Shot Willow",
+        "riding area": "Iron Mountain",
+        "rating": "",
+        "distance": "470 m",
+        "descent": "-112 m",
+        "climb": ""
+    },
+    {
+        "": "",
+        "title": "3 Virgins",
+        "riding area": "Valleycliffe",
+        "rating": "",
+        "distance": "258 m",
+        "descent": "",
+        "climb": "18 m"
+    },
+    {
+        "": "",
+        "title": "3D",
+        "riding area": "West Sechelt",
+        "rating": "",
+        "distance": "2 km",
+        "descent": "-41 m",
+        "climb": "28 m"
+    },
+    {
+        "": "",
+        "title": "3GB",
+        "riding area": "Duck Lake Trails",
+        "rating": "",
+        "distance": "97 m",
+        "descent": "",
+        "climb": "2 m"
+    },
+    {
+        "": "",
+        "title": "007",
+        "riding area": "White Lake Grasslands",
+        "rating": "",
+        "distance": "2 km",
+        "descent": "-14 m",
+        "climb": "153 m"
+    },
+    {
+        "": "",
+        "title": "10 Dollar",
+        "riding area": "Pidherny Recreation Site",
+        "rating": "",
+        "distance": "433 m",
+        "descent": "-48 m",
+        "climb": ""
+    },
+    {
+        "": "",
+        "title": "10 Licks",
+        "riding area": "Snowden Demonstration Forest",
+        "rating": "",
+        "distance": "2 km",
+        "descent": "-64 m",
+        "climb": "28 m"
+    },
+    {
+        "": "",
+        "title": "10 Swoops",
+        "riding area": "Chinook Forest Woodlands",
+        "rating": "",
+        "distance": "2 km",
+        "descent": "-31 m",
+        "climb": "17 m"
+    },
+    {
+        "": "",
+        "title": "10:50",
+        "riding area": "Ridge Runner",
+        "rating": "",
+        "distance": "1 km",
+        "descent": "-51 m",
+        "climb": "28 m"
+    },
+    {
+        "": "",
+        "title": "10K",
+        "riding area": "Mount 7",
+        "rating": "",
+        "distance": "657 m",
+        "descent": "-168 m",
+        "climb": ""
+    },
+    {
+        "": "",
+        "title": "10k Trail - Brookleigh Boat Launch to Jennings Lane",
+        "riding area": "Victoria",
+        "rating": "",
+        "distance": "3 km",
+        "descent": "-8 m",
+        "climb": "11 m"
+    },
+    {
+        "": "",
+        "title": "10k Trail - Jennings Lane to North Beach",
+        "riding area": "Victoria",
+        "rating": "",
+        "distance": "1 km",
+        "descent": "-11 m",
+        "climb": "14 m"
+    },
+    {
+        "": "",
+        "title": "10k Trail - Water Ski Beach to Brookleigh Boat Launch",
+        "riding area": "Victoria",
+        "rating": "",
+        "distance": "600 m",
+        "descent": "-13 m",
+        "climb": "8 m"
+    },
+    {
+        "": "",
+        "title": "10.52",
+        "riding area": "Ridge Runner",
+        "rating": "",
+        "distance": "187 m",
+        "descent": "-25 m",
+        "climb": ""
+    },
+    {
+        "": "",
+        "title": "11th Lick",
+        "riding area": "Snowden Demonstration Forest",
+        "rating": "",
+        "distance": "334 m",
+        "descent": "-3 m",
+        "climb": "3 m"
+    },
+    {
+        "": "",
+        "title": "12 seconds",
+        "riding area": "Valleycliffe",
+        "rating": "",
+        "distance": "81 m",
+        "descent": "",
+        "climb": "2 m"
+    },
+    {
+        "": "",
+        "title": "12th Avenue Dyke",
+        "riding area": "Boundary Bay Regional Park",
+        "rating": "",
+        "distance": "2 km",
+        "descent": "-2 m",
+        "climb": "3 m"
+    },
+    {
+        "": "",
+        "title": "13 Slurpees",
+        "riding area": "West Lake Trails",
+        "rating": "",
+        "distance": "531 m",
+        "descent": "-40 m",
+        "climb": "3 m"
+    },
+    {
+        "": "",
+        "title": "13 Steps to Doom",
+        "riding area": "Svoboda Road",
+        "rating": "",
+        "distance": "688 m",
+        "descent": "-174 m",
+        "climb": "1 m"
+    },
+    {
+        "": "",
+        "title": "14th St E",
+        "riding area": "North Vancouver",
+        "rating": "",
+        "distance": "81 m",
+        "descent": "-2 m",
+        "climb": ""
+    },
+    {
+        "": "",
+        "title": "15th Ave/Ship Creek Trail Climb Connector",
+        "riding area": "City Trails",
+        "rating": "",
+        "distance": "228 m",
+        "descent": "-1 m",
+        "climb": "27 m"
+    },
+    {
+        "": "",
+        "title": "17 st SE - 3 ave SE",
+        "riding area": "Salmon Arm Greenways",
+        "rating": "",
+        "distance": "70 m",
+        "descent": "",
+        "climb": ""
+    },
+    {
+        "": "",
+        "title": "17 st SE - 16 st SE",
+        "riding area": "Salmon Arm Greenways",
+        "rating": "",
+        "distance": "78 m",
+        "descent": "",
+        "climb": ""
+    },
+    {
+        "": "",
+        "title": "19t  st NE - 20th st NE",
+        "riding area": "Salmon Arm Greenways",
+        "rating": "",
+        "distance": "100 m",
+        "descent": "",
+        "climb": ""
+    },
+    {
+        "": "",
+        "title": "19th Hole",
+        "riding area": "Diamond Head",
+        "rating": "",
+        "distance": "1 km",
+        "descent": "-354 m",
+        "climb": ""
+    },
+    {
+        "": "",
+        "title": "20th st NE - Turner Crk",
+        "riding area": "Salmon Arm Greenways",
+        "rating": "",
+        "distance": "67 m",
+        "descent": "",
+        "climb": ""
+    },
+    {
+        "": "",
+        "title": "20th st SE - 21st st SE",
+        "riding area": "Salmon Arm Greenways",
+        "rating": "",
+        "distance": "78 m",
+        "descent": "",
+        "climb": ""
+    },
+    {
+        "": "",
+        "title": "21st Hole",
+        "riding area": "Woods Creek",
+        "rating": "",
+        "distance": "3 km",
+        "descent": "-56 m",
+        "climb": "12 m"
+    },
+    {
+        "": "",
+        "title": "21st St E Connector",
+        "riding area": "North Vancouver",
+        "rating": "",
+        "distance": "129 m",
+        "descent": "-5 m",
+        "climb": "2 m"
+    },
+    {
+        "": "",
+        "title": "22nd Hole",
+        "riding area": "Woods Creek",
+        "rating": "",
+        "distance": "2 km",
+        "descent": "-42 m",
+        "climb": "3 m"
+    },
+    {
+        "": "",
+        "title": "23 Connector",
+        "riding area": "Mount Revelstoke National Park",
+        "rating": "",
+        "distance": "2 km",
+        "descent": "-97 m",
+        "climb": ""
+    },
+    {
+        "": "",
+        "title": "23 st SE - 4 ave SE",
+        "riding area": "Salmon Arm Greenways",
+        "rating": "",
+        "distance": "113 m",
+        "descent": "",
+        "climb": ""
+    },
+    {
+        "": "",
+        "title": "23rd st SE to 24th st SE",
+        "riding area": "Salmon Arm Greenways",
+        "rating": "",
+        "distance": "92 m",
+        "descent": "",
+        "climb": ""
+    },
+    {
+        "": "",
+        "title": "24 Minions",
+        "riding area": "Mt. Mahony",
+        "rating": "",
+        "distance": "214 m",
+        "descent": "-1 m",
+        "climb": "4 m"
+    },
+    {
+        "": "",
+        "title": "24th st NE - Bastion Bypass",
+        "riding area": "Salmon Arm Greenways",
+        "rating": "",
+        "distance": "57 m",
+        "descent": "",
+        "climb": ""
+    },
+    {
+        "": "",
+        "title": "25th Alley",
+        "riding area": "North Vancouver",
+        "rating": "",
+        "distance": "179 m",
+        "descent": "",
+        "climb": "8 m"
+    },
+    {
+        "": "",
+        "title": "26 St to Tempe Cres Greenway",
+        "riding area": "Greenwood Park",
+        "rating": "",
+        "distance": "86 m",
+        "descent": "",
+        "climb": "6 m"
+    },
+    {
+        "": "",
+        "title": "30 Seconds of Fun",
+        "riding area": "Blue River",
+        "rating": "",
+        "distance": "2 km",
+        "descent": "-88 m",
+        "climb": "4 m"
+    },
+    {
+        "": "",
+        "title": "31 Seconds",
+        "riding area": "Valleycliffe",
+        "rating": "",
+        "distance": "102 m",
+        "descent": "-4 m",
+        "climb": ""
+    },
+    {
+        "": "",
+        "title": "33 1/3",
+        "riding area": "Halfmoon Bay",
+        "rating": "",
+        "distance": "834 m",
+        "descent": "-13 m",
+        "climb": "19 m"
+    },
+    {
+        "": "",
+        "title": "36",
+        "riding area": "Kalamalka Lake",
+        "rating": "",
+        "distance": "916 m",
+        "descent": "-162 m",
+        "climb": "1 m"
+    },
+    {
+        "": "",
+        "title": "37th St Connector",
+        "riding area": "Little Mountain Park",
+        "rating": "",
+        "distance": "248 m",
+        "descent": "",
+        "climb": "23 m"
+    },
+    {
+        "": "",
+        "title": "38 DD",
+        "riding area": "Mount Fromme",
+        "rating": "",
+        "distance": "267 m",
+        "descent": "-89 m",
+        "climb": ""
+    },
+    {
+        "": "",
+        "title": "108 Lake loop multi use trail",
+        "riding area": "108 Mile XC Trails",
+        "rating": "",
+        "distance": "7 km",
+        "descent": "-70 m",
+        "climb": "71 m"
+    },
+    {
+        "": "",
+        "title": "108 resort access",
+        "riding area": "108 Mile XC Trails",
+        "rating": "",
+        "distance": "813 m",
+        "descent": "-4 m",
+        "climb": "57 m"
+    },
+    {
+        "": "",
+        "title": "115 Climb Trail",
+        "riding area": "Little Mountain",
+        "rating": "",
+        "distance": "2 km",
+        "descent": "-7 m",
+        "climb": "142 m"
+    },
+    {
+        "": "",
+        "title": "115th Ave Connector",
+        "riding area": "Osoyoos",
+        "rating": "",
+        "distance": "432 m",
+        "descent": "-17 m",
+        "climb": "3 m"
+    },
+    {
+        "": "",
+        "title": "128 Ave. Path",
+        "riding area": "Maple Ridge",
+        "rating": "",
+        "distance": "5 km",
+        "descent": "-8 m",
+        "climb": "36 m"
+    },
+    {
+        "": "",
+        "title": "132 Ave. Connector",
+        "riding area": "Maple Ridge",
+        "rating": "",
+        "distance": "168 m",
+        "descent": "",
+        "climb": "9 m"
+    },
+    {
+        "": "",
+        "title": "132 Ave. Connector",
+        "riding area": "Maple Ridge",
+        "rating": "",
+        "distance": "324 m",
+        "descent": "-31 m",
+        "climb": "3 m"
+    },
+    {
+        "": "",
+        "title": "142 to RC connector",
+        "riding area": "South Benson / Wolf Mountain",
+        "rating": "",
+        "distance": "515 m",
+        "descent": "-58 m",
+        "climb": ""
+    },
+    {
+        "": "",
+        "title": "147",
+        "riding area": "Greenway/Forests for the World",
+        "rating": "",
+        "distance": "99 m",
+        "descent": "-1 m",
+        "climb": "1 m"
+    },
+    {
+        "": "",
+        "title": "162A St Access Trail",
+        "riding area": "Tynehead Regional Park",
+        "rating": "",
+        "distance": "703 m",
+        "descent": "-22 m",
+        "climb": ""
+    },
+    {
+        "": "",
+        "title": "164 St Access Trail",
+        "riding area": "Tynehead Regional Park",
+        "rating": "",
+        "distance": "359 m",
+        "descent": "-16 m",
+        "climb": ""
+    },
+    {
+        "": "",
+        "title": "168 St Access Trail",
+        "riding area": "Tynehead Regional Park",
+        "rating": "",
+        "distance": "627 m",
+        "descent": "-25 m",
+        "climb": ""
+    },
+    {
+        "": "",
+        "title": "236 Connector",
+        "riding area": "Silver Valley",
+        "rating": "",
+        "distance": "201 m",
+        "descent": "",
+        "climb": "30 m"
+    },
+    {
+        "": "",
+        "title": "240 St Connector",
+        "riding area": "Maple Ridge",
+        "rating": "",
+        "distance": "344 m",
+        "descent": "",
+        "climb": "18 m"
+    },
+    {
+        "": "",
+        "title": "272 Street Trail",
+        "riding area": "Maple Ridge",
+        "rating": "",
+        "distance": "2 km",
+        "descent": "",
+        "climb": "69 m"
+    },
+    {
+        "": "",
+        "title": "280's",
+        "riding area": "B&K",
+        "rating": "",
+        "distance": "2 km",
+        "descent": "-4 m",
+        "climb": "155 m"
+    },
+    {
+        "": "",
+        "title": "1199",
+        "riding area": "Whistler Mountain Bike Park",
+        "rating": "",
+        "distance": "2 km",
+        "descent": "-489 m",
+        "climb": "3 m"
+    },
+    {
+        "": "",
+        "title": "1922",
+        "riding area": "Mt Wabi",
+        "rating": "",
+        "distance": "1 km",
+        "descent": "-193 m",
+        "climb": "5 m"
+    },
+    {
+        "": "",
+        "title": "2001",
+        "riding area": "B&K",
+        "rating": "",
+        "distance": "394 m",
+        "descent": "-26 m",
+        "climb": ""
+    },
+    {
+        "": "",
+        "title": "2010",
+        "riding area": "China Ridge",
+        "rating": "",
+        "distance": "4 km",
+        "descent": "-140 m",
+        "climb": "140 m"
+    },
+    {
+        "": "",
+        "title": "2020",
+        "riding area": "Burke Mountain",
+        "rating": "",
+        "distance": "701 m",
+        "descent": "-46 m",
+        "climb": "5 m"
+    },
+    {
+        "": "",
+        "title": "2024 BRAVO p",
+        "riding area": "Nakusp",
+        "rating": "",
+        "distance": "219 m",
+        "descent": "-3 m",
+        "climb": "1 m"
+    },
+    {
+        "": "",
+        "title": "2024 GREEN BOTTOM p",
+        "riding area": "Nakusp",
+        "rating": "",
+        "distance": "618 m",
+        "descent": "-36 m",
+        "climb": "6 m"
+    },
+    {
+        "": "",
+        "title": "2024 GREEN MID p",
+        "riding area": "Nakusp",
+        "rating": "",
+        "distance": "896 m",
+        "descent": "-80 m",
+        "climb": "1 m"
+    },
+    {
+        "": "",
+        "title": "2024 GREEN TOP p",
+        "riding area": "Nakusp",
+        "rating": "",
+        "distance": "790 m",
+        "descent": "-65 m",
+        "climb": "4 m"
+    },
+    {
+        "": "",
+        "title": "2024 MOOSE p",
+        "riding area": "Nakusp",
+        "rating": "",
+        "distance": "1 km",
+        "descent": "-93 m",
+        "climb": "32 m"
+    },
+    {
+        "": "",
+        "title": "2024 MOOSE 2 MACH p",
+        "riding area": "Nakusp",
+        "rating": "",
+        "distance": "152 m",
+        "descent": "-2 m",
+        "climb": "3 m"
+    },
+    {
+        "": "",
+        "title": "$2 Hotdog",
+        "riding area": "Noble Canyon",
+        "rating": "",
+        "distance": "1 km",
+        "descent": "-305 m",
+        "climb": "27 m"
+    },
+    {
+        "": "",
+        "title": "$10",
+        "riding area": "Bowser Trails",
+        "rating": "",
+        "distance": "603 m",
+        "descent": "-1 m",
+        "climb": "14 m"
+    },
+    {
+        "": "",
+        "title": "(Not) Slippery When Wet",
+        "riding area": "Terrace Mountain",
+        "rating": "",
+        "distance": "303 m",
+        "descent": "-37 m",
+        "climb": ""
+    },
+    {
+        "": "",
+        "title": "* Palomino",
+        "riding area": "Three Blind Mice",
+        "rating": "",
+        "distance": "327 m",
+        "descent": "-20 m",
+        "climb": "8 m"
+    },
+    {
+        "": "",
+        "title": "*ROCK STAR*",
+        "riding area": "West Sechelt",
+        "rating": "",
+        "distance": "419 m",
+        "descent": "-33 m",
+        "climb": "9 m"
+    }
+]

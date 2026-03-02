@@ -1,0 +1,43 @@
+[
+  {
+    "name": "biggie",
+    "preferences": {
+      "skill_level": "intermediate",
+      "terrain_mix": {
+        "blue": 35,
+        "red": 45,
+        "black": 20
+      },
+      "max_drive_hours": 5,
+      "budget_cad": 260,
+      "user_lat": 49.2827,
+      "user_lon": -123.1207,
+      "powder_preference": 7,
+      "preferred_temp_c": -5,
+      "wind_tolerance_kmh": 30,
+      "crowd_tolerance": "high"
+    },
+    "updated_at": "2026-02-17T08:02:12.166103+00:00"
+  },
+  {
+    "name": "testprofile",
+    "preferences": {
+      "budget_cad": 280,
+      "crowd_tolerance": "medium",
+      "max_drive_hours": 5,
+      "powder_preference": 7,
+      "preferred_temp_c": -5,
+      "refresh_resorts": false,
+      "skill_level": "intermediate",
+      "terrain_mix": {
+        "black": 20,
+        "blue": 35,
+        "red": 45
+      },
+      "user_lat": 49.2827,
+      "user_lon": -123.1207,
+      "wind_tolerance_kmh": 30
+    },
+    "updated_at": "2026-02-17T07:50:06.638658+00:00"
+  }
+]

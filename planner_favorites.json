@@ -1,0 +1,22 @@
+[
+  {
+    "resort_id": "whistler-blackcomb",
+    "note": "test",
+    "updated_at": "2026-02-17T07:50:06.640294+00:00"
+  },
+  {
+    "resort_id": "salmo",
+    "note": "",
+    "updated_at": "2026-02-17T08:01:55.566437+00:00"
+  },
+  {
+    "resort_id": "summit-lake-nakusp",
+    "note": "",
+    "updated_at": "2026-02-17T08:19:31.546341+00:00"
+  },
+  {
+    "resort_id": "fairmont-hot-springs",
+    "note": "",
+    "updated_at": "2026-02-17T08:19:41.395703+00:00"
+  }
+]
