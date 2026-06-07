@@ -1,0 +1,225 @@
+{
+  "big-white": {
+    "lat": 49.7379086,
+    "lon": -118.9459084
+  },
+  "whistler-blackcomb": {
+    "lat": 50.0683855,
+    "lon": -122.9467684
+  },
+  "apex-mountain-resort": {
+    "lat": 49.3837784,
+    "lon": -119.9110723
+  },
+  "baldy-mountain-resort": {
+    "missing": true
+  },
+  "bear-mountain-dawson-creek": {
+    "lat": 48.474431,
+    "lon": -123.526704
+  },
+  "big-bam-taylor": {
+    "lat": 56.1264592,
+    "lon": -120.7338075
+  },
+  "clearwater": {
+    "lat": 51.6503514,
+    "lon": -120.0654595
+  },
+  "crystal-mountain-westbank-temporarily-closed": {
+    "lat": 49.4260088,
+    "lon": -118.979567
+  },
+  "cypress-mountain": {
+    "lat": 49.3976802,
+    "lon": -123.2011443
+  },
+  "fairmont-hot-springs": {
+    "lat": 50.3377592,
+    "lon": -115.861694
+  },
+  "fernie": {
+    "lat": 49.5041747,
+    "lon": -115.062867
+  },
+  "grouse-mountain": {
+    "lat": 49.3794719,
+    "lon": -123.0767805
+  },
+  "harper-mountain": {
+    "lat": 50.7221307,
+    "lon": -120.1323356
+  },
+  "hart-highlands-prince-george": {
+    "lat": 53.9768199,
+    "lon": -122.7954055
+  },
+  "hudson-bay-mountain-smithers": {
+    "lat": 54.8084679,
+    "lon": -127.3385606
+  },
+  "hudson-s-hope-portage-mountain-temporarily-closed": {
+    "lat": 56.0259608,
+    "lon": -121.914047
+  },
+  "kicking-horse-golden": {
+    "lat": 51.2937094,
+    "lon": -116.962465
+  },
+  "kimberley": {
+    "lat": 49.6850876,
+    "lon": -115.9819477
+  },
+  "little-mac-mackenzie": {
+    "lat": 55.33987,
+    "lon": -123.0797137
+  },
+  "manning-park": {
+    "lat": 49.063255,
+    "lon": -120.7746225
+  },
+  "mount-cain": {
+    "lat": 50.2285384,
+    "lon": -126.3259406
+  },
+  "mount-seymour": {
+    "lat": 49.3932052,
+    "lon": -122.9444935
+  },
+  "mount-timothy": {
+    "lat": 51.9043241,
+    "lon": -121.2613486
+  },
+  "mount-washington": {
+    "lat": 49.7528282,
+    "lon": -125.2963912
+  },
+  "murray-ridge": {
+    "lat": 54.5497244,
+    "lon": -124.2428942
+  },
+  "panorama": {
+    "lat": 50.4578,
+    "lon": -116.2372
+  },
+  "phoenix-mountain": {
+    "lat": 49.0967,
+    "lon": -118.6019
+  },
+  "powder-king": {
+    "lat": 55.3596699,
+    "lon": -122.6468169
+  },
+  "purden": {
+    "lat": 53.9251205,
+    "lon": -121.9330577
+  },
+  "red-mountain-resort-rossland": {
+    "lat": 49.1056332,
+    "lon": -117.846346
+  },
+  "revelstoke-mountain-resort": {
+    "lat": 50.9692628,
+    "lon": -118.1092086
+  },
+  "salmo": {
+    "lat": 49.1934431,
+    "lon": -117.2787054
+  },
+  "sasquatch-mountain-hemlock-valley": {
+    "lat": 49.3839179,
+    "lon": -121.9387948
+  },
+  "shames-mountain": {
+    "lat": 54.4931564,
+    "lon": -128.9664821
+  },
+  "silverstar": {
+    "lat": 50.3582,
+    "lon": -119.0573
+  },
+  "south-tweedsmuir-park": {
+    "lat": 52.408235,
+    "lon": -125.918602
+  },
+  "summit-lake-nakusp": {
+    "lat": 54.2976279,
+    "lon": -122.65887
+  },
+  "sun-peaks": {
+    "lat": 50.8844684,
+    "lon": -119.8823295
+  },
+  "tabor-mountain": {
+    "lat": 53.9119571,
+    "lon": -122.4986198
+  },
+  "troll-resort-quesnel": {
+    "lat": 53.0663298,
+    "lon": -121.9415959
+  },
+  "wapiti-ski-hill-elkford": {
+    "missing": true
+  },
+  "whitewater-nelson": {
+    "lat": 49.4411495,
+    "lon": -117.1629077
+  },
+  "aberdeen-heli-prince-george": {
+    "missing": true
+  },
+  "adamants": {
+    "missing": true
+  },
+  "atlin-heli-sports": {
+    "missing": true
+  },
+  "bella-coola": {
+    "missing": true
+  },
+  "bobby-burns": {
+    "missing": true
+  },
+  "bridal-veil-mountain-resort-planned": {
+    "missing": true
+  },
+  "bugaboos": {
+    "missing": true
+  },
+  "canadian-mountain-holidays-valemount": {
+    "missing": true
+  },
+  "cariboo-mica-mountain": {
+    "missing": true
+  },
+  "cariboos": {
+    "missing": true
+  },
+  "chatter-creek": {
+    "missing": true
+  },
+  "crescent-spur": {
+    "missing": true
+  },
+  "eagle-pass-heliskiing": {
+    "missing": true
+  },
+  "galena": {
+    "missing": true
+  },
+  "garibaldi-at-squamish-planned": {
+    "missing": true
+  },
+  "gothics": {
+    "missing": true
+  },
+  "great-northern-snow-cat-trout-lake": {
+    "missing": true
+  },
+  "highland-powder-cat-skiing-temporarily-closed": {
+    "missing": true
+  },
+  "jumbo-glacier-resort-planned": {
+    "missing": true
+  }
+}

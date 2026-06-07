@@ -1,0 +1,922 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Best Day to Ride Planner</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <main class="layout">
+    <!-- Header with Title & Theme Toggle -->
+    <header class="header-wrapper">
+      <div class="hero">
+        <p class="eyebrow">British Columbia Ski Planner</p>
+        <h1>Best Day to Ride</h1>
+        <p class="subtitle">Find your best day & destination based on real-time weather and personal style.</p>
+      </div>
+      <button id="themeToggleBtn" class="theme-toggle" title="Toggle Dark/Light Mode">
+        <svg id="themeToggleIcon" viewBox="0 0 24 24">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </button>
+    </header>
+
+    <!-- Status Alert Panel -->
+    <div id="statusAlert" class="status"></div>
+
+    <!-- Screen 1: Planner -->
+    <section id="tab-planner" class="tab-screen active">
+      <section class="panel">
+        <h2>
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10"></circle><polygon points="12 8 8 12 12 16 16 12 12 8"></polygon>
+          </svg>
+          Quick Match
+        </h2>
+        
+        <form id="plannerForm" onsubmit="event.preventDefault();">
+          <!-- Easy Mode Form Fields -->
+          <div class="form-grid" style="margin-bottom: 20px;">
+            <div class="form-group-full">
+              <label>Starting Location
+                <div class="input-with-action">
+                  <input id="locationInput" type="text" value="Vancouver, BC" placeholder="Enter city/town (e.g. Vancouver, BC, Kelowna)">
+                  <button type="button" id="detectLocationBtn" class="secondary" title="Detect Location">📍 Detect</button>
+                </div>
+              </label>
+            </div>
+
+            <div class="form-group-full">
+              <label>Riding Level
+                <select id="skillLevel">
+                  <option value="beginner">Beginner (looks for easy terrain mix)</option>
+                  <option value="intermediate" selected>Intermediate (balanced blue & red runs)</option>
+                  <option value="expert">Expert (demands challenging steep terrain)</option>
+                </select>
+              </label>
+            </div>
+
+            <!-- Vibe Preset Cards Selector -->
+            <div class="form-group-full">
+              <span style="font-size: 0.88rem; font-weight: 600; color: var(--text-secondary); margin-bottom: 8px; display: block;">Choose Your Vibe</span>
+              <div class="vibe-grid">
+                <div class="vibe-card active" data-vibe="cruiser">
+                  <span class="vibe-icon">🏔️</span>
+                  <span class="vibe-name">Cruiser & Relax</span>
+                  <span class="vibe-desc">Easy blue runs, pleasant weather & low crowds</span>
+                </div>
+                <div class="vibe-card" data-vibe="powder">
+                  <span class="vibe-icon">❄️</span>
+                  <span class="vibe-name">Powder Chaser</span>
+                  <span class="vibe-desc">Finds the most snowfall, cold & wind are fine</span>
+                </div>
+                <div class="vibe-card" data-vibe="budget">
+                  <span class="vibe-icon">💰</span>
+                  <span class="vibe-name">Budget Day Trip</span>
+                  <span class="vibe-desc">Closest resorts & lowest pass ticket prices</span>
+                </div>
+                <div class="vibe-card" data-vibe="expert">
+                  <span class="vibe-icon">⚡</span>
+                  <span class="vibe-name">Expert Charger</span>
+                  <span class="vibe-desc">Steep black diamond runs & vertical drop challenge</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Toggle Advanced Section Button -->
+          <button type="button" class="advanced-toggle-btn" id="advancedToggleBtn">
+            ⚙️ Show Advanced Customizations
+          </button>
+
+          <!-- Collapsed Advanced Section -->
+          <div class="advanced-section" id="advancedSection">
+            <h3 style="font-size: 1.1rem; margin-bottom: 15px; color: var(--text-secondary); display: flex; align-items: center; gap: 8px;">
+              🔧 Granular Preferences
+            </h3>
+            
+            <!-- Profile Preset Operations -->
+            <div class="profile-select-wrapper" style="border-bottom: 1px solid var(--border-color); padding-bottom: 15px; margin-bottom: 20px;">
+              <label class="profile-dropdown">
+                Saved Profile Presets
+                <select id="profilePresetSelect">
+                  <option value="">-- Choose a Saved Profile --</option>
+                </select>
+              </label>
+              <button type="button" id="deleteProfileBtn" class="secondary danger" style="margin-top: 25px;" disabled>Delete Preset</button>
+            </div>
+
+            <div class="form-grid">
+              <div class="form-group-full">
+                <label>Save Profile Name (to update/create preset)
+                  <input id="profileName" type="text" placeholder="e.g. My Weekend Plan">
+                </label>
+              </div>
+
+              <label>Max Drive Hours 
+                <input id="maxDrive" type="number" value="5" step="0.5" min="0.5">
+              </label>
+
+              <label>Budget Limit (CAD) 
+                <input id="budget" type="number" value="260" step="10" min="40">
+              </label>
+
+              <label>Latitude (Autofilled)
+                <input id="userLat" type="number" step="0.0001" value="49.2827">
+              </label>
+
+              <label>Longitude (Autofilled)
+                <input id="userLon" type="number" step="0.0001" value="-123.1207">
+              </label>
+
+              <label>Powder Preference (0-10) 
+                <input id="powderPref" type="number" value="7" min="0" max="10">
+              </label>
+
+              <label>Preferred Temp (°C) 
+                <input id="tempPref" type="number" value="-5" step="1">
+              </label>
+
+              <label>Wind Tolerance (km/h) 
+                <input id="windTol" type="number" value="30" min="5" max="80">
+              </label>
+
+              <label>Crowd Tolerance
+                <select id="crowdTol">
+                  <option value="low">Low (prefer uncrowded slopes)</option>
+                  <option value="medium" selected>Medium</option>
+                  <option value="high">High (busy resorts are fine)</option>
+                </select>
+              </label>
+
+              <div class="form-group-full" style="margin-top: 10px;">
+                <div style="display: flex; justify-content: space-between; align-items: baseline;">
+                  <span style="font-size: 0.88rem; font-weight: 600; color: var(--text-secondary);">Terrain Mix Preference</span>
+                  <span id="terrainMixValidation" style="font-size: 0.8rem; font-weight: 700; color: var(--success);">Total: 100%</span>
+                </div>
+                <div class="terrain-mix-inputs" style="margin-top: 8px;">
+                  <label>Blue % (Easy)
+                    <input id="blueMix" type="number" value="35" min="0" max="100">
+                  </label>
+                  <label>Red % (Med)
+                    <input id="redMix" type="number" value="45" min="0" max="100">
+                  </label>
+                  <label>Black % (Hard)
+                    <input id="blackMix" type="number" value="20" min="0" max="100">
+                  </label>
+                </div>
+                <div class="terrain-visualizer">
+                  <div id="barBlue" class="terrain-bar-blue" style="width: 35%"></div>
+                  <div id="barRed" class="terrain-bar-red" style="width: 45%"></div>
+                  <div id="barBlack" class="terrain-bar-black" style="width: 20%"></div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="actions" style="border-top: 1px solid var(--border-color); padding-top: 15px; margin-top: 15px;">
+              <button type="button" id="saveProfileBtn" class="secondary">Save/Update Profile Preset</button>
+            </div>
+          </div>
+        </form>
+
+        <div class="actions" style="margin-top: 25px;">
+          <button type="button" id="runBtn" style="padding: 16px 32px; font-size: 1.1rem; flex-grow: 1;">Find My Best Day</button>
+        </div>
+      </section>
+    </section>
+
+    <!-- Screen 2: Results -->
+    <section id="tab-results" class="tab-screen">
+      <section class="panel">
+        <div class="filter-bar">
+          <h2>Ranked Recommendations</h2>
+          <div class="filter-controls">
+            <input id="searchQuery" type="text" placeholder="Search by name..." style="padding: 8px 12px; font-size: 0.85rem;">
+            <select id="sortBy" style="padding: 8px 12px; font-size: 0.85rem;">
+              <option value="fit">Sort by Fit Score</option>
+              <option value="price">Sort by Price (Low to High)</option>
+              <option value="distance">Sort by Distance</option>
+              <option value="drive">Sort by Drive Time</option>
+              <option value="slope">Sort by Slope Length</option>
+            </select>
+          </div>
+        </div>
+        <div id="resultsWrap" class="cards"></div>
+      </section>
+    </section>
+
+    <!-- Screen 3: Compare -->
+    <section id="tab-compare" class="tab-screen">
+      <section class="panel">
+        <h2>Top 3 Comparison</h2>
+        <div id="compareWrap" class="compare-container"></div>
+      </section>
+    </section>
+
+    <!-- Screen 4: Favorites -->
+    <section id="tab-favorites" class="tab-screen">
+      <section class="panel">
+        <h2>Favorites & Watchlist</h2>
+        <div id="favoritesWrap" class="cards"></div>
+      </section>
+    </section>
+  </main>
+
+  <!-- Bottom Navigation Tabs Bar -->
+  <nav class="tabbar">
+    <button class="tab-btn active" data-tab="planner">
+      <span>⚙️</span> Planner
+    </button>
+    <button class="tab-btn" data-tab="results">
+      <span>🏔️</span> Results
+    </button>
+    <button class="tab-btn" data-tab="compare">
+      <span>📊</span> Compare
+    </button>
+    <button class="tab-btn" data-tab="favorites">
+      <span>❤️</span> Watchlist
+    </button>
+  </nav>
+
+  <script>
+    const statusAlert = document.getElementById("statusAlert");
+    const resultsWrap = document.getElementById("resultsWrap");
+    const compareWrap = document.getElementById("compareWrap");
+    const favoritesWrap = document.getElementById("favoritesWrap");
+    const tabButtons = Array.from(document.querySelectorAll(".tab-btn"));
+    const tabScreens = {
+      planner: document.getElementById("tab-planner"),
+      results: document.getElementById("tab-results"),
+      compare: document.getElementById("tab-compare"),
+      favorites: document.getElementById("tab-favorites"),
+    };
+
+    // Client-side cache of recommendations
+    let currentRecommendations = [];
+    let lastGeocodedQuery = "";
+
+    // Theme Switcher Logic
+    const themeToggleBtn = document.getElementById("themeToggleBtn");
+    const themeToggleIcon = document.getElementById("themeToggleIcon");
+    const savedTheme = localStorage.getItem("theme") || "light";
+    setTheme(savedTheme);
+
+    function setTheme(theme) {
+      document.documentElement.setAttribute("data-theme", theme);
+      localStorage.setItem("theme", theme);
+      if (theme === "dark") {
+        themeToggleIcon.innerHTML = `<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>`;
+      } else {
+        themeToggleIcon.innerHTML = `<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>`;
+      }
+    }
+
+    themeToggleBtn.addEventListener("click", () => {
+      const current = document.documentElement.getAttribute("data-theme");
+      setTheme(current === "dark" ? "light" : "dark");
+    });
+
+    // Navigation Tab Switching
+    function setTab(tab) {
+      for (const [key, screen] of Object.entries(tabScreens)) {
+        screen.classList.toggle("active", key === tab);
+      }
+      for (const btn of tabButtons) {
+        btn.classList.toggle("active", btn.dataset.tab === tab);
+      }
+      if (tab === "favorites") {
+        loadFavorites();
+      }
+    }
+    tabButtons.forEach(btn => btn.addEventListener("click", () => setTab(btn.dataset.tab)));
+
+    // Status Helper
+    function showStatus(message, type = "info") {
+      statusAlert.textContent = message;
+      statusAlert.className = "status visible";
+      if (type === "success") statusAlert.classList.add("success-style");
+      else if (type === "error") statusAlert.classList.add("error-style");
+      else if (type === "warning") statusAlert.classList.add("error-style");
+      else statusAlert.classList.add("info-style");
+      
+      if (window.innerWidth < 768) {
+        statusAlert.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    function clearStatus() {
+      statusAlert.className = "status";
+    }
+
+    // Advanced Panel Toggle
+    const advancedToggleBtn = document.getElementById("advancedToggleBtn");
+    const advancedSection = document.getElementById("advancedSection");
+    
+    advancedToggleBtn.addEventListener("click", () => {
+      const isVisible = advancedSection.classList.toggle("visible");
+      advancedToggleBtn.textContent = isVisible 
+        ? "⚙️ Hide Advanced Customizations" 
+        : "⚙️ Show Advanced Customizations";
+    });
+
+    // Geolocation Detection
+    const detectLocationBtn = document.getElementById("detectLocationBtn");
+    detectLocationBtn.addEventListener("click", () => {
+      if (!navigator.geolocation) {
+        showStatus("Geolocation is not supported by your browser.", "error");
+        return;
+      }
+      showStatus("Detecting location...", "info");
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          document.getElementById("userLat").value = position.coords.latitude.toFixed(4);
+          document.getElementById("userLon").value = position.coords.longitude.toFixed(4);
+          document.getElementById("locationInput").value = "Current Location";
+          lastGeocodedQuery = "Current Location";
+          showStatus("Coordinates updated to current location.", "success");
+        },
+        (error) => {
+          console.error(error);
+          showStatus("Failed to access location: " + error.message, "error");
+        }
+      );
+    });
+
+    // Dynamic Terrain Mix Balancing
+    const blueInput = document.getElementById("blueMix");
+    const redInput = document.getElementById("redMix");
+    const blackInput = document.getElementById("blackMix");
+    const barBlue = document.getElementById("barBlue");
+    const barRed = document.getElementById("barRed");
+    const barBlack = document.getElementById("barBlack");
+    const terrainValidationLabel = document.getElementById("terrainMixValidation");
+
+    function updateTerrainBar() {
+      const blue = Number(blueInput.value) || 0;
+      const red = Number(redInput.value) || 0;
+      const black = Number(blackInput.value) || 0;
+      const total = blue + red + black;
+      
+      barBlue.style.width = (total > 0 ? (blue / total) * 100 : 0) + "%";
+      barRed.style.width = (total > 0 ? (red / total) * 100 : 0) + "%";
+      barBlack.style.width = (total > 0 ? (black / total) * 100 : 0) + "%";
+      
+      if (total === 100) {
+        terrainValidationLabel.textContent = "Total: 100%";
+        terrainValidationLabel.style.color = "var(--success)";
+      } else {
+        terrainValidationLabel.textContent = `Total: ${total}% (must sum to 100%)`;
+        terrainValidationLabel.style.color = "var(--danger)";
+      }
+    }
+
+    [blueInput, redInput, blackInput].forEach(inp => inp.addEventListener("input", updateTerrainBar));
+
+    // Vibe Mappings Setup
+    const vibeCards = Array.from(document.querySelectorAll(".vibe-card"));
+    const vibeSettings = {
+      cruiser: {
+        blue: 50, red: 40, black: 10,
+        powder: 3, temp: -2, wind: 40,
+        crowd: "low", budget: 250, drive: 5
+      },
+      powder: {
+        blue: 20, red: 45, black: 35,
+        powder: 10, temp: -8, wind: 25,
+        crowd: "medium", budget: 300, drive: 6
+      },
+      budget: {
+        blue: 35, red: 45, black: 20,
+        powder: 4, temp: -5, wind: 35,
+        crowd: "high", budget: 130, drive: 3.5
+      },
+      expert: {
+        blue: 10, red: 30, black: 60,
+        powder: 8, temp: -9, wind: 20,
+        crowd: "high", budget: 350, drive: 7
+      }
+    };
+
+    function applyVibe(vibeKey) {
+      const settings = vibeSettings[vibeKey];
+      if (!settings) return;
+      
+      // Update hidden/advanced inputs
+      blueInput.value = settings.blue;
+      redInput.value = settings.red;
+      blackInput.value = settings.black;
+      document.getElementById("powderPref").value = settings.powder;
+      document.getElementById("tempPref").value = settings.temp;
+      document.getElementById("windTol").value = settings.wind;
+      document.getElementById("crowdTol").value = settings.crowd;
+      document.getElementById("budget").value = settings.budget;
+      document.getElementById("maxDrive").value = settings.drive;
+      
+      updateTerrainBar();
+    }
+
+    vibeCards.forEach(card => {
+      card.addEventListener("click", () => {
+        vibeCards.forEach(c => c.classList.remove("active"));
+        card.classList.add("active");
+        applyVibe(card.dataset.vibe);
+      });
+    });
+
+    // Get Payload Helper
+    function plannerPayload() {
+      return {
+        skill_level: document.getElementById("skillLevel").value,
+        terrain_mix: {
+          blue: Number(blueInput.value),
+          red: Number(redInput.value),
+          black: Number(blackInput.value),
+        },
+        max_drive_hours: Number(document.getElementById("maxDrive").value),
+        budget_cad: Number(document.getElementById("budget").value),
+        user_lat: Number(document.getElementById("userLat").value),
+        user_lon: Number(document.getElementById("userLon").value),
+        powder_preference: Number(document.getElementById("powderPref").value),
+        preferred_temp_c: Number(document.getElementById("tempPref").value),
+        wind_tolerance_kmh: Number(document.getElementById("windTol").value),
+        crowd_tolerance: document.getElementById("crowdTol").value
+      };
+    }
+
+    // Saved Profiles Operations
+    const profileNameInput = document.getElementById("profileName");
+    const profileSelect = document.getElementById("profilePresetSelect");
+    const deleteProfileBtn = document.getElementById("deleteProfileBtn");
+    let savedProfilesList = [];
+
+    async function loadSavedProfilesList() {
+      try {
+        const res = await fetch("/api/planner/profiles");
+        if (!res.ok) throw new Error();
+        savedProfilesList = await res.json();
+        
+        // Populate dropdown
+        profileSelect.innerHTML = '<option value="">-- Choose a Saved Profile --</option>';
+        savedProfilesList.forEach(p => {
+          const opt = document.createElement("option");
+          opt.value = p.name;
+          opt.textContent = p.name;
+          profileSelect.appendChild(opt);
+        });
+        deleteProfileBtn.disabled = true;
+      } catch (err) {
+        console.error("Failed to load profiles.", err);
+      }
+    }
+
+    // Apply Profile Selection
+    profileSelect.addEventListener("change", () => {
+      const selectedName = profileSelect.value;
+      if (!selectedName) {
+        deleteProfileBtn.disabled = true;
+        return;
+      }
+      
+      const prof = savedProfilesList.find(p => p.name === selectedName);
+      if (prof) {
+        const prefs = prof.preferences;
+        profileNameInput.value = prof.name;
+        document.getElementById("skillLevel").value = prefs.skill_level || "intermediate";
+        document.getElementById("maxDrive").value = prefs.max_drive_hours ?? 5;
+        document.getElementById("budget").value = prefs.budget_cad ?? 260;
+        document.getElementById("userLat").value = prefs.user_lat ?? 49.2827;
+        document.getElementById("userLon").value = prefs.user_lon ?? -123.1207;
+        document.getElementById("powderPref").value = prefs.powder_preference ?? 7;
+        document.getElementById("tempPref").value = prefs.preferred_temp_c ?? -5;
+        document.getElementById("windTol").value = prefs.wind_tolerance_kmh ?? 30;
+        document.getElementById("crowdTol").value = prefs.crowd_tolerance || "medium";
+        
+        if (prefs.terrain_mix) {
+          blueInput.value = prefs.terrain_mix.blue ?? 35;
+          redInput.value = prefs.terrain_mix.red ?? 45;
+          blackInput.value = prefs.terrain_mix.black ?? 20;
+        }
+        
+        // Clear active vibe button as custom profile is applied
+        vibeCards.forEach(c => c.classList.remove("active"));
+        
+        updateTerrainBar();
+        deleteProfileBtn.disabled = false;
+        showStatus(`Preset profile "${prof.name}" applied.`, "success");
+      }
+    });
+
+    // Save/Update Profile Preset
+    async function saveProfile() {
+      const name = profileNameInput.value.trim();
+      if (!name) {
+        showStatus("Please enter a profile name first.", "error");
+        return;
+      }
+      
+      try {
+        const res = await fetch("/api/planner/profiles", {
+          method: "POST",
+          headers: {"Content-Type": "application/json"},
+          body: JSON.stringify({name, preferences: plannerPayload()})
+        });
+        if (!res.ok) throw new Error("Failed saving");
+        showStatus(`Profile "${name}" successfully saved.`, "success");
+        await loadSavedProfilesList();
+        profileSelect.value = name;
+        deleteProfileBtn.disabled = false;
+      } catch (err) {
+        showStatus("Failed to save profile.", "error");
+      }
+    }
+
+    // Delete Profile Preset
+    async function deleteProfile() {
+      const selectedName = profileSelect.value;
+      if (!selectedName) return;
+      
+      try {
+        const res = await fetch(`/api/planner/profiles/${encodeURIComponent(selectedName)}`, {
+          method: "DELETE"
+        });
+        if (!res.ok) throw new Error("Failed deleting");
+        showStatus(`Profile "${selectedName}" deleted.`, "success");
+        profileNameInput.value = "";
+        await loadSavedProfilesList();
+      } catch (err) {
+        showStatus("Failed to delete profile.", "error");
+      }
+    }
+
+    document.getElementById("saveProfileBtn").addEventListener("click", saveProfile);
+    deleteProfileBtn.addEventListener("click", deleteProfile);
+
+    // Score Bar Helper
+    function scoreBar(value) {
+      const pct = Math.max(0, Math.min(100, Math.round(value * 100)));
+      return `
+        <div class="score-item">
+          <div class="score-header">
+            <span>${pct}%</span>
+          </div>
+          <div class="bar"><span style="width:${pct}%"></span></div>
+        </div>`;
+    }
+
+    // Render Resort Recommendations
+    function renderResults() {
+      const searchVal = document.getElementById("searchQuery").value.toLowerCase();
+      const sortVal = document.getElementById("sortBy").value;
+      
+      // Filter
+      let filtered = currentRecommendations.filter(row => 
+        row.resort.name.toLowerCase().includes(searchVal)
+      );
+      
+      // Sort
+      if (sortVal === "price") {
+        filtered.sort((a, b) => a.estimated_cost.total_cad - b.estimated_cost.total_cad);
+      } else if (sortVal === "distance") {
+        filtered.sort((a, b) => (a.estimated_travel.distance_km ?? 9999) - (b.estimated_travel.distance_km ?? 9999));
+      } else if (sortVal === "drive") {
+        filtered.sort((a, b) => (a.estimated_travel.drive_hours ?? 99) - (b.estimated_travel.drive_hours ?? 99));
+      } else if (sortVal === "slope") {
+        filtered.sort((a, b) => (b.resort.total_slope_km ?? 0) - (a.resort.total_slope_km ?? 0));
+      } else {
+        filtered.sort((a, b) => b.fit_score - a.fit_score);
+      }
+
+      if (!filtered.length) {
+        resultsWrap.innerHTML = "<p style='grid-column: 1/-1; text-align: center; color: var(--text-secondary); padding: 40px;'>No resorts match your filters or constraints.</p>";
+        return;
+      }
+
+      resultsWrap.innerHTML = filtered.map(row => {
+        const totalSlope = row.resort.total_slope_km ?? 0;
+        const blueKm = row.resort.blue_slope_km ?? 0;
+        const redKm = row.resort.red_slope_km ?? 0;
+        const blackKm = row.resort.black_slope_km ?? 0;
+        
+        return `
+          <article class="card">
+            <div class="card-header">
+              <div class="card-title-group">
+                <span class="card-rank-badge">RANK #${row.rank}</span>
+                <h3 style="margin-top: 6px;">${row.resort.name}</h3>
+                <span style="font-size: 0.82rem; color: var(--text-muted); font-weight: 500;">${row.resort.region}</span>
+              </div>
+              <div class="fit-score-badge">${row.fit_score}% Fit</div>
+            </div>
+
+            <p class="card-why">${row.why_top}</p>
+
+            <div class="card-details">
+              <div class="detail-row">
+                <span class="detail-label">❄️ Best Conditions window:</span>
+                <span class="detail-value" style="color: var(--accent-primary); font-weight: 700;">${row.best_day_window}</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">💵 Est. cost breakdown:</span>
+                <span class="detail-value">Pass $${row.estimated_cost.day_pass_cad} + Drive $${row.estimated_cost.travel_cad} = <strong>$${row.estimated_cost.total_cad}</strong></span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">🚗 Travel details:</span>
+                <span class="detail-value">${row.estimated_travel.drive_hours ?? "N/A"} hrs (${row.estimated_travel.distance_km ?? "N/A"} km)</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">🚠 Slopes & Lifts:</span>
+                <span class="detail-value">${totalSlope} km slopes, ${row.resort.lifts_count ?? "N/A"} lifts</span>
+              </div>
+              <div style="margin-top: 6px; display: flex; gap: 4px; height: 4px; border-radius: 99px; overflow: hidden;">
+                <div style="width: ${totalSlope > 0 ? (blueKm/totalSlope)*100 : 33}%; background: #3b82f6;" title="Easy: ${blueKm}km"></div>
+                <div style="width: ${totalSlope > 0 ? (redKm/totalSlope)*100 : 33}%; background: #ef4444;" title="Intermediate: ${redKm}km"></div>
+                <div style="width: ${totalSlope > 0 ? (blackKm/totalSlope)*100 : 33}%; background: var(--text-primary);" title="Expert: ${blackKm}km"></div>
+              </div>
+            </div>
+
+            <div class="score-grid">
+              <div>Terrain ${scoreBar(row.score_breakdown.terrain)}</div>
+              <div>Skill ${scoreBar(row.score_breakdown.skill)}</div>
+              <div>Budget ${scoreBar(row.score_breakdown.budget)}</div>
+              <div>Drive ${scoreBar(row.score_breakdown.drive)}</div>
+              <div>Crowd ${scoreBar(row.score_breakdown.crowd)}</div>
+              <div>Weather ${scoreBar(row.score_breakdown.weather)}</div>
+            </div>
+
+            <div class="actions" style="margin-top: 10px;">
+              <button class="secondary" style="flex-grow: 1;" onclick="addFavorite('${row.resort.id}')">❤️ Watchlist</button>
+              <a class="link-btn secondary" href="${row.resort.source_url}" target="_blank" rel="noreferrer" style="padding: 12px 16px;">Source</a>
+            </div>
+          </article>
+        `;
+      }).join("");
+    }
+
+    // Render Top 3 Compare Cards
+    function renderCompare(rows) {
+      if (!rows || !rows.length) {
+        compareWrap.innerHTML = "<p style='text-align: center; color: var(--text-secondary); width: 100%; padding: 40px;'>Please run the planner first to compare top recommendations.</p>";
+        return;
+      }
+
+      let cheapestIdx = 0;
+      let minCost = rows[0].total_trip_cad;
+      let closestIdx = -1;
+      let minHours = rows[0].travel_hours ?? 999;
+      
+      rows.forEach((r, idx) => {
+        if (r.total_trip_cad < minCost) {
+          minCost = r.total_trip_cad;
+          cheapestIdx = idx;
+        }
+        if (r.travel_hours !== null && r.travel_hours < minHours) {
+          minHours = r.travel_hours;
+          closestIdx = idx;
+        }
+      });
+
+      compareWrap.innerHTML = rows.map((r, idx) => {
+        let badges = "";
+        if (idx === 0) badges += `<span class="compare-badge best-fit">🏆 Best Fit</span>`;
+        if (idx === cheapestIdx) badges += `<span class="compare-badge budget">💰 Best Budget</span>`;
+        if (idx === closestIdx) badges += `<span class="compare-badge closest">🚗 Closest</span>`;
+
+        return `
+          <div class="compare-card ${idx === 0 ? 'highlighted' : ''}">
+            ${badges}
+            <h3 class="compare-resort-name">${r.name}</h3>
+            
+            <div class="card-details" style="border: none; padding: 0;">
+              <div class="detail-row">
+                <span class="detail-label">Fit Rating:</span>
+                <span class="detail-value" style="color: var(--accent-primary); font-size: 1.15rem; font-weight: 800;">${r.fit_score}%</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Total Estimate:</span>
+                <span class="detail-value" style="font-size: 1.1rem; font-weight: 700;">$${r.total_trip_cad}</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Lift Pass:</span>
+                <span class="detail-value">$${r.day_pass_cad}</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Drive Time:</span>
+                <span class="detail-value">${r.travel_hours !== null ? r.travel_hours.toFixed(1) + ' hrs' : 'N/A'}</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Slopes / Lifts:</span>
+                <span class="detail-value">${r.total_slope_km ?? 'N/A'} km / ${r.lifts_count ?? 'N/A'} lifts</span>
+              </div>
+              <div class="detail-row" style="flex-direction: column; gap: 4px; margin-top: 10px; border-top: 1px dashed var(--border-color); padding-top: 10px;">
+                <span class="detail-label">Forecast Day window:</span>
+                <span class="detail-value" style="color: var(--accent-secondary); font-size: 0.85rem;">${r.best_day_window}</span>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join("");
+    }
+
+    // Run Planner Request with On-the-fly Geocoding
+    async function runPlanner() {
+      // 1. Terrain Check (just in case they opened advanced and messed it up)
+      const blue = Number(blueInput.value) || 0;
+      const red = Number(redInput.value) || 0;
+      const black = Number(blackInput.value) || 0;
+      if (blue + red + black !== 100) {
+        showStatus("Advanced terrain mix percentages must total exactly 100%. Please check Advanced Tuning.", "error");
+        return;
+      }
+
+      // 2. Geocode Location Field if not already done
+      const locationText = document.getElementById("locationInput").value.trim();
+      if (!locationText) {
+        showStatus("Please enter a starting location.", "error");
+        return;
+      }
+
+      if (lastGeocodedQuery !== locationText) {
+        showStatus(`Resolving starting location coordinates for "${locationText}"...`, "info");
+        try {
+          const geocodeRes = await fetch(`https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(locationText)}&format=json&limit=1`);
+          if (!geocodeRes.ok) throw new Error();
+          const geocodeData = await geocodeRes.json();
+          
+          if (geocodeData && geocodeData.length > 0) {
+            const lat = parseFloat(geocodeData[0].lat);
+            const lon = parseFloat(geocodeData[0].lon);
+            document.getElementById("userLat").value = lat.toFixed(4);
+            document.getElementById("userLon").value = lon.toFixed(4);
+            lastGeocodedQuery = locationText;
+          } else {
+            showStatus(`Could not resolve location "${locationText}". Please check spelling or enter a specific city.`, "error");
+            return;
+          }
+        } catch (err) {
+          console.error(err);
+          showStatus("Geocoding service unavailable. Using default coordinates.", "warning");
+        }
+      }
+
+      // 3. Send payload to recommend engine
+      showStatus("Analyzing weather forecasts, road conditions, and resort pricing...", "info");
+      
+      try {
+        const res = await fetch("/api/planner/recommend", {
+          method: "POST",
+          headers: {"Content-Type": "application/json"},
+          body: JSON.stringify(plannerPayload())
+        });
+        if (!res.ok) throw new Error("Planner request failed");
+        
+        const data = await res.json();
+        currentRecommendations = data.results;
+        
+        renderResults();
+        renderCompare(data.compare_top_3);
+        
+        if (data.alert) {
+          showStatus(data.alert, "success");
+        } else {
+          showStatus("Recommendation run complete.", "success");
+        }
+        
+        setTab("results");
+      } catch (err) {
+        console.error(err);
+        showStatus("Planner run failed. Please check backend server logs.", "error");
+      }
+    }
+
+    document.getElementById("runBtn").addEventListener("click", runPlanner);
+    document.getElementById("searchQuery").addEventListener("input", renderResults);
+    document.getElementById("sortBy").addEventListener("change", renderResults);
+
+    // Watchlist/Favorites CRUD operations
+    async function addFavorite(resortId) {
+      try {
+        const res = await fetch("/api/planner/favorites", {
+          method: "POST",
+          headers: {"Content-Type": "application/json"},
+          body: JSON.stringify({resort_id: resortId, note: ""})
+        });
+        if (!res.ok) throw new Error();
+        showStatus("Added to watchlist.", "success");
+      } catch (err) {
+        showStatus("Failed to add to watchlist.", "error");
+      }
+    }
+    window.addFavorite = addFavorite;
+
+    async function removeFavorite(resortId) {
+      try {
+        const res = await fetch(`/api/planner/favorites/${encodeURIComponent(resortId)}`, {
+          method: "DELETE"
+        });
+        if (!res.ok) throw new Error();
+        showStatus("Removed from watchlist.", "success");
+        await loadFavorites();
+      } catch (err) {
+        showStatus("Failed to remove from watchlist.", "error");
+      }
+    }
+    window.removeFavorite = removeFavorite;
+
+    async function updateFavoriteNote(resortId, noteText) {
+      try {
+        const res = await fetch("/api/planner/favorites", {
+          method: "POST",
+          headers: {"Content-Type": "application/json"},
+          body: JSON.stringify({resort_id: resortId, note: noteText})
+        });
+        if (!res.ok) throw new Error();
+        showStatus("Watchlist note saved.", "success");
+      } catch (err) {
+        showStatus("Failed to save watchlist note.", "error");
+      }
+    }
+    window.updateFavoriteNote = updateFavoriteNote;
+
+    async function loadFavorites() {
+      favoritesWrap.innerHTML = "<p style='text-align: center; color: var(--text-secondary); width: 100%; padding: 40px;'>Loading watchlist...</p>";
+      try {
+        const res = await fetch("/api/planner/favorites");
+        if (!res.ok) throw new Error();
+        const favs = await res.json();
+        
+        if (!favs.length) {
+          favoritesWrap.innerHTML = "<p style='text-align: center; color: var(--text-secondary); width: 100%; padding: 40px;'>Your watchlist is empty. Add resorts from the recommendations tab!</p>";
+          return;
+        }
+
+        favoritesWrap.innerHTML = favs.map(f => {
+          const resort = f.resort;
+          if (!resort) {
+            return `
+              <article class="card">
+                <div class="card-header">
+                  <h3>Resort ID: ${f.resort_id}</h3>
+                </div>
+                <p class="card-why">Resort details not cached.</p>
+                <div class="actions">
+                  <button class="secondary danger" onclick="removeFavorite('${f.resort_id}')">Remove</button>
+                </div>
+              </article>
+            `;
+          }
+
+          const totalSlope = resort.total_slope_km ?? 0;
+          return `
+            <article class="card">
+              <div class="card-header">
+                <div>
+                  <h3 style="font-size: 1.25rem;">${resort.name}</h3>
+                  <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 500;">${resort.region}</span>
+                </div>
+              </div>
+              
+              <div class="card-details" style="border: none; padding: 0; margin-bottom: 0;">
+                <div class="detail-row">
+                  <span class="detail-label">Lifts:</span>
+                  <span class="detail-value">${resort.lifts_count ?? "N/A"} ski lifts</span>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-label">Terrain Slope:</span>
+                  <span class="detail-value">${totalSlope} km total</span>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-label">Pass cost:</span>
+                  <span class="detail-value">${resort.day_pass ?? "N/A"}</span>
+                </div>
+              </div>
+
+              <div>
+                <label style="font-size: 0.78rem;">My Personal Notes
+                  <textarea class="favorite-note-box" id="note-${f.resort_id}">${f.note}</textarea>
+                </label>
+                <button class="secondary" style="margin-top: 8px; width: 100%; font-size: 0.85rem; padding: 8px;" onclick="updateFavoriteNote('${f.resort_id}', document.getElementById('note-${f.resort_id}').value)">Save Note</button>
+              </div>
+
+              <div class="actions" style="margin-top: auto; border-top: 1px solid var(--border-color); padding-top: 12px;">
+                <button class="secondary danger" style="flex-grow: 1; font-size: 0.85rem; padding: 8px;" onclick="removeFavorite('${f.resort_id}')">Remove</button>
+                <a class="link-btn secondary" href="${resort.source_url}" target="_blank" rel="noreferrer" style="font-size: 0.85rem; padding: 8px 12px;">Source</a>
+              </div>
+            </article>
+          `;
+        }).join("");
+      } catch (err) {
+        console.error(err);
+        favoritesWrap.innerHTML = "<p style='text-align: center; color: var(--danger); width: 100%; padding: 40px;'>Failed to load watchlist. Please refresh page.</p>";
+      }
+    }
+
+    // Initial load
+    window.addEventListener("DOMContentLoaded", () => {
+      loadSavedProfilesList();
+      applyVibe("cruiser"); // Apply Cruiser as default vibe preset
+      updateTerrainBar();
+    });
+  </script>
+</body>
+</html>
